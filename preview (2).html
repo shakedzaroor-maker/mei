@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dad Breakfast Invite</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #fff7e6;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    #buttons {
+      position: relative;
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #yes {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 20px;
+    }
+
+    #no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Daddddd will you go eat breakfast with me?:3</h1>
+
+  <div id="buttons">
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const message = document.getElementById("message");
+
+    const phrases = [
+      "please 🥺",
+      "im begging 😭",
+      "we havent done that in monthsss",
+      "come onnnn",
+      "just this once😭",
+      "i'll be very sad💔",
+      "Daddddd plssss😭",
+      "you meanie>:",
+      "EVIL!!!",
+      "you hate me):<"
+  
+      
+    ];
+
+    let yesSize = 20;
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+
+      // Grow YES button
+      yesSize += 10;
+      yesBtn.style.fontSize = yesSize + "px";
+
+      // Show random begging message
+      const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+      message.textContent = randomPhrase;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = "<h1>YIPPEEEEEE CAN'T WAIT!!!!^^<3</h1>";
+    });
+  </script>
+
+</body>
+</html>
